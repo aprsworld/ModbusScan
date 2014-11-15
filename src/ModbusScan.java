@@ -11,7 +11,7 @@ public class ModbusScan {
 	
 	protected boolean hitNetworkAddress(int networkAddress) {
 		boolean b[] = new boolean[1];
-		short s[] = new short[5];
+		short s[] = new short[6];
 		
 		try { 
 			//mbus.readCoils(networkAddress, 0, b);
