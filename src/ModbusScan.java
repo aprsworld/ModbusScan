@@ -20,8 +20,8 @@ public class ModbusScan {
 			char c = (char) (s[0]&0xff);
 			System.err.println("");
 			System.err.println("# Likely APRS World serial number " + c + "" + s[1] + " @ address " + networkAddress);
-			System.err.println("# with hardware model=" + (char) (s[3]&0xff) + " hardware version=" + (char) (s[4]&0xff)
-					+ " software model=" + (char) (s[5]&0xff) + " software version=" + (char) (s[6]&0xff) );
+			System.err.println("# with hardware model=" + (char) (s[2]&0xff) + " hardware version=" + (char) (s[3]&0xff)
+					+ " software model=" + (char) (s[4]&0xff) + " software version=" + (char) (s[5]&0xff) );
 
 			
 //			System.err.println("# 1000=" + s[0] + " 10001=" + s[1]);
