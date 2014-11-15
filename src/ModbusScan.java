@@ -11,14 +11,18 @@ public class ModbusScan {
 	
 	protected boolean hitNetworkAddress(int networkAddress) {
 		boolean b[] = new boolean[1];
-		short s[] = new short[2];
+		short s[] = new short[5];
 		
 		try { 
 			//mbus.readCoils(networkAddress, 0, b);
 			mbus.readInputRegisters(networkAddress, 1000, s);
 			
 			char c = (char) (s[0]&0xff);
+			System.err.println("");
 			System.err.println("# Likely APRS World serial number " + c + "" + s[1] + " @ address " + networkAddress);
+			System.err.println("# with hardware model=" + (char) (s[3]&0xff) + " hardware version=" + (char) (s[4]&0xff)
+					+ " software model=" + (char) (s[5]&0xff) + " software version=" + (char) (s[6]&0xff) );
+
 			
 //			System.err.println("# 1000=" + s[0] + " 10001=" + s[1]);
 			
